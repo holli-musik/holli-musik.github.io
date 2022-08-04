@@ -1,0 +1,298 @@
+@font-face {
+    font-family: 'Didot';
+    src: url('/Didot.ttc');
+}
+
+:root {
+    --primary-color: rgb(0, 0, 0);
+    --background-color: #ffffff;
+    --p-color: hsl(0, 0%, 15%);
+}
+
+html {
+    font-family: 'Didot', Georgia, serif;
+    font-size: 18px;
+    line-height: 145%;
+    scroll-behavior: smooth;
+}
+
+main {
+    padding: 2em 0em;
+    transition: padding 0.5s;
+}
+
+section {
+    margin: 0em auto;
+    padding: 4em 2em 0em 2em;
+    max-width: 600px;
+    animation: fadein 0.25s ease-in;
+}
+
+body, p {
+    margin: 0;
+}
+
+strong {
+    color: var(--primary-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+p {
+    text-align: justify;
+    color: var(--p-color);
+}
+
+a {
+    color: var(--primary-color) !important;
+}
+
+iframe {
+    width: 100%;
+    height: 350px;
+    position: relative;
+}
+
+.header-container {
+    position: relative;
+    text-align: center;
+    height: 600px;
+    animation: fadein 2.0s ease-in;
+    font-size: 80%;
+}
+
+.header-container > div {
+    height: inherit;
+}
+
+.header-container > div img {
+    width: 100%;
+    height: inherit;
+    object-fit: cover;
+    /* object-position: 50% 10%; */
+}
+
+
+.header-container > div + div {
+    color: white;
+    display: flex;
+    height: inherit;
+    transform: translateY(-100%);
+}
+
+.header-container > div + div > h1 {
+    margin: auto auto 0 auto;
+    font-size: 400%;
+    padding: 0.5em;
+    font-family: 'Didot', Georgia, serif;
+    font-weight: 400;
+}
+
+.header-container > div + div > div.left {
+    margin-left: 1em;
+}
+
+.header-container > div + div > div.right {
+    margin-right: 1em;
+}
+
+#separator-symbol {
+    color: var(--primary-color);
+    text-align: center;
+    margin: auto;
+    padding: 0.5em;
+    font-size: 100%;
+}
+
+.shows-table {
+    font-size: 110%;
+}
+
+.shows-table td {
+    padding: 0.5em;
+}
+
+.show-date {
+    /* font-family: 'Yeseva One', serif; */
+    color: var(--primary-color);
+    padding-right: 1em;
+}
+
+.h2-container {
+    display: flex;
+}
+
+.h2-container > h2 {
+    padding: 0 1em;
+}
+
+.h2-container > h2 + div {
+    border-top: 1px solid var(--primary-color);
+    flex-grow: 1;
+    margin: auto;
+}
+
+.social-media-link {
+    background-image: none;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    padding: 4em 0;
+}
+
+footer div {
+    padding: 0 1em;
+    line-height: 0;
+}
+
+footer > div > svg {
+    border: 1px solid transparent;
+    padding: 2px;
+    border-radius: 100%;
+    transition: border 0.2s;
+}
+
+footer > div > svg:hover {
+    border: 1px solid var(--primary-color);
+}
+
+.icon-circle {
+    fill: var(--primary-color);
+}
+
+.video:last-child {
+    padding: 0 !important;
+}
+
+nav {
+    position: fixed;
+    text-align: center;
+    width: 100%;
+    transition: 0.5s;
+    background-color: var(--background-color);
+    z-index: 1000;
+}
+
+nav a {
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.1s;
+}
+
+nav a:hover {
+    border-bottom: 1px solid;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 0;
+    }
+
+    #mobile-navbar-menu-button {
+        position: fixed;
+        width: 100%;
+        z-index: 1001;
+        color: var(--primary-color);
+        border: 0;
+        border-radius: 0;
+        height: 50px;
+        background-color: var(--background-color);
+        fill: var(--primary-color);
+    }
+
+    nav {
+        position: fixed;
+        top: 50px;
+    }
+
+    nav.hidden {
+        top: -100%;
+    }
+
+    nav a {
+        padding: 1em 0;
+        display: inline-block;
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) {
+    #mobile-navbar-menu-button {
+        display: none;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+        padding: 2em 0em 0em 0em;
+        top: 0;
+    }
+
+    nav.smaller {
+        padding: 0;
+    }
+
+    nav a {
+        padding: 1em;
+    }
+
+}
+
+.video {
+    display: block;
+    margin: auto;
+    padding: 0em 0em 4em 0em;
+    animation: fadein 1s ease-out;
+}
+
+.spotify {
+    display: block;
+    margin: auto;
+    padding: 0em 0em 1em 0em;
+    animation: fadein 1s ease-out;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@supports (display: grid) {
+    .releases {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;
+    }
+
+    .releases > div {
+        padding: 0.5em;
+    }
+}
+
+@supports not (display: grid) {
+    .releases {
+        display: flex;
+    }
+
+    .releases > div {
+        flex-basis: 100%;
+        padding: 0.5em;
+    }
+}
+
+.release {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 2%;
+    transition: 0.5s;
+}
+
+.release:hover {
+    opacity: 0.66;
+}
