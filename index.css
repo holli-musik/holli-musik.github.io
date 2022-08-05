@@ -57,30 +57,33 @@ iframe {
 }
 
 .header-container {
-    position: relative;
+    /* position: relative; */
     text-align: center;
-    height: 600px;
+    /* height: 600px; */
     animation: fadein 2.0s ease-in;
     font-size: 80%;
 }
 
 .header-container > div {
-    height: inherit;
+    /* height: inherit; */
 }
 
 .header-container > div img {
     width: 100%;
-    height: inherit;
-    object-fit: cover;
+    /* height: inherit; */
+    /* object-fit: cover; */
     /* object-position: 50% 10%; */
 }
 
 
 .header-container > div + div {
+    position: absolute;
     color: white;
     display: flex;
-    height: inherit;
-    transform: translateY(-100%);
+    /* height: inherit; */
+    /* transform: translateY(-100%); */
+    left: 50%;
+    transform: translate(-50%, -100%);
 }
 
 .header-container > div + div > h1 {
